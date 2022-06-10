@@ -8,9 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 
-public class Product {
-    protected int id;
-    protected String productTitle;
-    protected int cost;
-
+public class Smartphone extends Product{
+    private String manufacturer;
 }
