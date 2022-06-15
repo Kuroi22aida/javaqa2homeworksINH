@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @Data
 
 public class Book extends Product {
-    private String author;
+    protected String author;
 
-    public Book(int id, String productTitle, int cost, String author) {
+    protected Book(int id, String productTitle, int cost, String author) {
         super(id, productTitle, cost);
         this.author = author;
     }

@@ -1,22 +1,18 @@
 package ru.netology.domain;
 
-import ru.netology.domain.Product;
-import ru.netology.domain.Book;
-import ru.netology.domain.Smartphone;
-import ru.netology.domain.ProductRepository;
-
 
 public class ProductManager {
 
-    private ProductRepository repository;
+    protected ProductRepository repository;
 
     public ProductManager(ProductRepository repository) {
         this.repository = repository;
     }
 
 
-    public void add(Product product) {
+    public Product[] add(Product product) {
         repository.save(product);
+        return new Product[0];
     }
 
     public Product[] searchBy(String text) {

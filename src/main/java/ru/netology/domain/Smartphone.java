@@ -8,6 +8,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 
-public class Smartphone extends Product{
-    private String manufacturer;
+public class Smartphone extends Product {
+    protected String manufacturer;
+
+    protected Smartphone(int id, String productTitle, int cost, String manufacturer) {
+        super(id, productTitle, cost);
+        this.manufacturer = manufacturer;
+    }
 }

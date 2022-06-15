@@ -2,7 +2,7 @@ package ru.netology.domain;
 
 public class ProductRepository {
 
-    private Product[] products = new Product[0];
+    protected Product[] products = new Product[0];
 
     public void save(Product product) {
         Product[] tmp = new Product[products.length + 1];
@@ -16,7 +16,7 @@ public class ProductRepository {
         return products;
     }
 
-    public void removeById(int id) {
+    public Product[] removeById(int id) {
         Product[] tmp = new Product[products.length - 1];
         int index = 0;
         for (Product product : products) {
@@ -26,6 +26,7 @@ public class ProductRepository {
             }
         }
         products = tmp;
+        return products;
     }
 
 }
