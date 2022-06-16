@@ -43,4 +43,46 @@ public class ProductManagerTest {
 
     }
 
+    @Test
+    public void shouldFIndQuery2() {
+
+        ProductManager manager = new ProductManager(repository);
+
+        manager.add(book1);
+
+
+        Product[] actual = manager.searchBy("Lord");
+        Product[] expected = {book1};
+
+        assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void shouldFIndQuery3() {
+
+        ProductManager manager = new ProductManager(repository);
+
+
+        Product[] actual = manager.searchBy("hone");
+        Product[] expected = {};
+
+        assertArrayEquals(expected, actual);
+
+    }
+    @Test
+    public void shouldFIndQuery4() {
+
+        ProductManager manager = new ProductManager(repository);
+
+        manager.add(book1);
+
+
+        Product[] actual = manager.searchBy("phone");
+        Product[] expected = {};
+
+        assertArrayEquals(expected, actual);
+
+    }
+
 }
